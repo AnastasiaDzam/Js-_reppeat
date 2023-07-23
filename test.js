@@ -1,27 +1,26 @@
-function GetName(number1, number2){
-    return number1-number2
-}
+class Car {
+    #name = ''
 
-const Score = (number1, number2) => 
-number1 === 0 ? 'Число не должно быть равно 0' : number1 - number2
+    constructor(name) {
+        this.#name = name
+    }
 
-
-
-
-function GetPrice(name){
-    switch (name){
-        case 'BMW':
-            return '100 000'
-
-        case 'Mercedes':
-            return '150 000'
-
-        case 'Audi':
-            return '50 000'
-
-        default:
-            return 'Такой машины нет в каталоге'
+    getName() {
+        return this.#name
     }
 }
 
-console.log (GetPrice('BMW'))
+    class Ship extends Car {
+        constructor(name) {
+            super(name)
+        }
+
+        getPrice() {
+            return 100000
+        }
+    }
+
+    const car = new Car('BMW')
+    const ship = new Ship('Rocket')
+
+    console.log(ship.getPrice())
