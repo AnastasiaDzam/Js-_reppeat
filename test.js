@@ -1,27 +1,27 @@
-function GetName(number1, number2){
-    return number1-number2
-}
+class Animal {
+    #name
 
-const Score = (number1, number2) => 
-number1 === 0 ? 'Число не должно быть равно 0' : number1 - number2
+    constructor(name) {
+        this.#name = name
+    }
 
+    move() {
+        console.log(`${this.#name} is running!`)
+    }
 
-
-
-function GetPrice(name){
-    switch (name){
-        case 'BMW':
-            return '100 000'
-
-        case 'Mercedes':
-            return '150 000'
-
-        case 'Audi':
-            return '50 000'
-
-        default:
-            return 'Такой машины нет в каталоге'
+    eat(){
+        console.log(`${this.#name} is eating!`)
     }
 }
 
-console.log (GetPrice('BMW'))
+class Dog extends Animal {
+    bark() {
+        console.log('gav, gav...')
+    }
+}
+
+const dog = new Dog('Charly')
+const dog2 = new Dog('Jemy')
+
+dog.move()
+dog2.eat()
