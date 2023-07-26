@@ -1,27 +1,25 @@
-function GetName(number1, number2){
-    return number1-number2
+/* fetch('https://jsonplaceholder.typicode.com/todos/1')
+.then(data => {
+    if(data.ok) return data.json()
+    return data.statusText
+})
+.then(console.log)
+*/
+
+const fetchData = async() => {
+   console.log('Loading...')
+
+   try {
+    const response = await fetch ('https://jsonplaceholder.typicode.com/todos/1')
+    if (!response.ok) console.log(response.statusText)
+
+    const data =await response.json()
+    return console.log(data)
+   } 
+   catch (error) {
+    console.log(error)
+   }
+   finally {
+    console.log('Loaded')
+   }
 }
-
-const Score = (number1, number2) => 
-number1 === 0 ? 'Число не должно быть равно 0' : number1 - number2
-
-
-
-
-function GetPrice(name){
-    switch (name){
-        case 'BMW':
-            return '100 000'
-
-        case 'Mercedes':
-            return '150 000'
-
-        case 'Audi':
-            return '50 000'
-
-        default:
-            return 'Такой машины нет в каталоге'
-    }
-}
-
-console.log (GetPrice('BMW'))
