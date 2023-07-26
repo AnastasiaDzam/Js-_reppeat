@@ -1,27 +1,14 @@
-class Animal {
-    #name
 
-    constructor(name) {
-        this.#name = name
-    }
+const body = document.querySelector('body')
+body.style.backgroundColor = '#1C1B22'
+body.style.color = 'white'
 
-    move() {
-        console.log(`${this.#name} is running!`)
-    }
+const heading = body.querySelector('.heading')
+heading.textContent = 'Easy Peasy ;)'
 
-    eat(){
-        console.log(`${this.#name} is eating!`)
-    }
-}
+const button = body.querySelector('button')
+button.addEventListener('click',(=> {
+    const type = prompt('Type?')
 
-class Dog extends Animal {
-    bark() {
-        console.log('gav, gav...')
-    }
-}
-
-const dog = new Dog('Charly')
-const dog2 = new Dog('Jemy')
-
-dog.move()
-dog2.eat()
+    heading.style.color = '#60FFCA'
+}))
